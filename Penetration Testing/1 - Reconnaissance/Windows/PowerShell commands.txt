@@ -1,0 +1,29 @@
+# PowerShell
+
+-? - help
+|  - pipe
+
+Get-Location - Path info
+[command] | Get-Member - displays information about the object that has been piped, cannot be used standalone
+Get-Help [command] - display man type page
+
+Get-ExecutionPolicy -List - get the execution policy
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope [scope] - define the execution policy for user
+
+## If-Else statements (there is no then)
+
+If ([condition]) {[block statements]} ElseIf ([condition]) {[block statements]}
+
+ -lt - lesser than
+ -gt - greater than
+ -eq - equivalent
+ -ne - not equivalent
+ -Match - contains string
+ 
+## While loop on its own
+While ([condition) {[block statements]}
+
+## For loop
+For (<init>; <condition>; <repeat>) {[block statements]}
+
+ForEach ($number in $numArray ) { $number * 13}
