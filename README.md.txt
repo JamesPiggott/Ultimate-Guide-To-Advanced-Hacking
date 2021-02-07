@@ -1,5 +1,10 @@
 # Penetration Testing Guide
 
+This repository contains a loose array of Python applications and scripts for use with penetration testing. Most are located on the folder 'Penetration Testing' which is further subdivided into the five stages of hacking: Reconnaissance, Scanning, Exploitation, Maintenance Access and Clearing Tracks. There are further folders on topics such as Encryption, Forensics and Security.
+
+The purpose of this repository is to aid my desire to improve my knowledge of pen testing. Using these scripts and examples I can carry them out against my own test labs.
+
+
 ## Reconnaissance
 
 ### Recon-ng Framework
