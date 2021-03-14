@@ -22,4 +22,18 @@ $ recon-ng # to start the application
 > modules load recon/domains-contacts/whois_pocs # start using a module
 > info # shows information of the module
 	
- 
+
+
+
+## Install the Go Programming Language
+wget https://golang.org/dl/go1.16.2.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf go1.16.2.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+source $HOME/.profile
+
+When creating a new Go project you will need to set GOPATH to:
+
+GOPATH=$HOME/[location_of_directory]
+
+After that is done create three new folders inside the directory: src, pkg and bin.
