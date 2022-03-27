@@ -104,7 +104,7 @@ f_banner
 
 echo
 echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
-echo -e "\e[93m[+]\e[00m SELECT THE TASK YOU WANT TO PERFORM ON TARGET: " $ip_address
+echo -e "\e[93m[+]\e[00m SELECT THE TASK YOU WANT TO PERFORM ON TARGET: " "$ip_address"
 echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
 echo ""
 echo "1. ICMP Echo Request"
@@ -123,11 +123,15 @@ read menu
 case $menu in
 
 1)
+clear
+f_banner
 icmp_echo_request
 sleep 2
 ;;
 
 2)
+clear
+f_banner
 syn_scan
 sleep 2
 ;;
