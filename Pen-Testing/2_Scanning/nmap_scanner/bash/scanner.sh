@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ip_address=192.168.188.1
+scan_all_ports=false
 while getopts u:i: flag
 do
     case "${flag}" in
@@ -73,6 +74,67 @@ slow_aggressive_scan() {
   nmap -sS -T2 -A -Pn $ip_address
 }
 
+scan_all_ports() {
+if [ "$scan_all_ports" == false ] ; then
+  scan_all_ports=true
+else
+  scan_all_ports=false
+fi
+}
+
+set_script_categories() {
+  echo
+}
+##############################################################################################################
+
+## USER DEFINED SCAN
+
+user_defined_scan() {
+menu=""
+until [ "$menu" = "10" ]; do
+
+clear
+f_banner
+
+echo
+echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
+echo -e "\e[93m[+]\e[00m CONFIGURE NMAP SCAN"
+echo -e "\e[93m[+]\e[00m SCAN ALL PORTS: " "$scan_all_ports"
+echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
+echo ""
+echo "1. Scan all ports"
+echo "2. Set NSE script categories to run"
+echo ""
+echo "0. Back"
+echo
+
+read menu
+case $menu in
+
+1)
+clear
+f_banner
+scan_all_ports
+sleep 2
+;;
+
+1)
+clear
+f_banner
+set_script_categories
+sleep 2
+;;
+
+
+0)
+break
+;;
+
+*) ;;
+
+esac
+done
+}
 
 ##############################################################################################################
 
@@ -83,7 +145,7 @@ automatic_scan(){
   echo
 }
 
-if [ "$user_input" = false ] ; then
+if [ "$user_input" == false ] ; then
   automatic_scan
 else
   echo
@@ -110,12 +172,14 @@ echo ""
 echo "1. ICMP Echo Request"
 echo "2. SYN Scan"
 echo "3. UDP Scan"
+echo "------- ADVANCED SCANS --------"
 echo "4. OS Discovery Scan"
 echo "5. Service Version Scan"
 echo "6. Firewall Evasion Scan"
 echo "7. Aggressive Scan"
 echo "8. Slow Aggressive Scan"
-echo ""
+echo "------ USER DEFINED SCAN ------"
+echo "9. Set SCAN options"
 echo "0. Back"
 echo
 
@@ -165,6 +229,12 @@ sleep 2
 slow_aggressive_scan
 sleep 2
 ;;
+
+9)
+user_defined_scan
+sleep 2
+;;
+
 
 0)
 break

