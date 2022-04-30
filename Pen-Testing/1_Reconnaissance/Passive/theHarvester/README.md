@@ -7,7 +7,7 @@ With theHarvester it is possible to scour a target and common sources such as Go
 ```
 git clone https://github.com/laramies/theHarvester 
 cd theHarvester
-python3 -m pip install -r requirements/base.txt
+python -m pip install -r requirements/base.txt
 ```
 
 Examples:
