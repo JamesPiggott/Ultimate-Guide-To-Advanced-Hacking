@@ -1,8 +1,13 @@
 # PKMID attack method
 
-With this method we only to capture one EOPOL frame from the target Acess Point. There is no need to capture the four-way handshake between AP and station.
+With this method we only to capture one EOPOL frame from the target Access Point. There is no need to capture the four-way handshake between AP and station.
 
 Ensure that before you start you have 'hcxdumptool', 'hcxtools' and 'hashcat' installed. Then bring the wireless adapter into monitor mode as shown in section 0.
+```
+sudo apt install hcxdumptool
+sudo apt install hcxtools
+sudo apt install hashcat
+```
 
 ## Collect PMKIDs
 

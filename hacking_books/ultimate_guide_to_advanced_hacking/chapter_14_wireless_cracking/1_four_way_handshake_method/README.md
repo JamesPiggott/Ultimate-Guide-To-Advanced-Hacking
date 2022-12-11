@@ -1,5 +1,7 @@
 ## Four-way handshake method
 
+Described below is the four-way handshake method of cracking a Wi-Fi password, the name is not to be confused
+
 ## Put wireless adapter in monitor mode
 ```
 sudo airmon-ng check kill

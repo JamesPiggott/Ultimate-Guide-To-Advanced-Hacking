@@ -5,70 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cde01cd8-2aeb-4efe-994b-06d06565c60f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_18_osint/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_19_threat_hunting/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_20_command_and_control/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_21_dark_web/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_22_hardware_and_physical_access/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_23_cryptography/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_24_cryptocurrency/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_2_windows_administration/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_3_networking/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_4_security_and_privacy/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_5_programming/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_6_reconnaissance/1_Reconnaissance/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_8_exploitation/3 - Exploitation/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_9_privilege_escalation/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Encryption/DeBruijnSequence/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_13_encryption/DeBruijnSequence/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Encryption/DeBruijnSequence/src/debruijnsequence.py" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_13_encryption/DeBruijnSequence/src/debruijnsequence.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Encryption/Decipher/TextAnalysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_13_encryption/Decipher/TextAnalysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Encryption/Decipher/cryptograms/plain_text/text1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_13_encryption/Decipher/cryptograms/plain_text/text1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Encryption/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_10_maintenance_access/4 - Maintenance Access/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Forensics/Image Analysis/Exif_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_17_forensics/Image Analysis/Exif_analysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Forensics/Image Analysis/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_17_forensics/Image Analysis/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Forensics/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Malware/HTML/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_12_malware/HTML/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Malware/HTML/popup.html" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_12_malware/HTML/popup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Malware/Linux_Exploits/reverse_engineering/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_12_malware/Linux_Exploits/reverse_engineering/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Malware/Viruses/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_12_malware/Viruses/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Malware/Viruses/simple_parasite/virus" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_12_malware/Viruses/simple_parasite/virus" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Malware/Viruses/simple_parasite/virus.c" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_12_malware/Viruses/simple_parasite/virus.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Pen-Testing/1_Reconnaissance/Active/nslookup/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_6_reconnaissance/1_Reconnaissance/Active/nslookup/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Pen-Testing/1_Reconnaissance/Active/traceroute/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_6_reconnaissance/1_Reconnaissance/Active/traceroute/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Pen-Testing/1_Reconnaissance/Google/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_6_reconnaissance/1_Reconnaissance/Google/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Pen-Testing/1_Reconnaissance/Passive/Fierce/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_6_reconnaissance/1_Reconnaissance/Passive/Fierce/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Pen-Testing/1_Reconnaissance/Passive/Google-Fu/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_6_reconnaissance/1_Reconnaissance/Passive/Google-Fu/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Pen-Testing/1_Reconnaissance/Passive/Google-Fu/theHarvester/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_6_reconnaissance/1_Reconnaissance/Passive/Google-Fu/theHarvester/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Pen-Testing/1_Reconnaissance/Passive/MetaGoofil/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_6_reconnaissance/1_Reconnaissance/Passive/MetaGoofil/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Pen-Testing/1_Reconnaissance/Passive/Whois/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_6_reconnaissance/1_Reconnaissance/Passive/Whois/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Pen-Testing/1_Reconnaissance/Passive/host/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_6_reconnaissance/1_Reconnaissance/Passive/host/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Pen-Testing/1_Reconnaissance/Passive/theHarvester/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_6_reconnaissance/1_Reconnaissance/Passive/theHarvester/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Pen-Testing/1_Reconnaissance/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_11_clearing_tracks/5 - Clearing Tracks/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Pen-Testing/1_Reconnaissance/Windows/PowerShell commands.txt" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_6_reconnaissance/1_Reconnaissance/Windows/PowerShell commands.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Pen-Testing/2_Scanning/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_7_scanning/2_Scanning/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Pen-Testing/2_Scanning/Vulnerability_scanning/Nessus/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_7_scanning/2_Scanning/Vulnerability_scanning/Nessus/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Pen-Testing/2_Scanning/go/src/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_7_scanning/2_Scanning/go/src/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Pen-Testing/2_Scanning/nmap_scanner/bash/scanner.sh" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_7_scanning/2_Scanning/nmap_scanner/bash/scanner.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Pen-Testing/2_Scanning/nmap_scanner/python/Scanner.py" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_7_scanning/2_Scanning/nmap_scanner/python/Scanner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Pen-Testing/3 - Exploitation/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_13_encryption/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Pen-Testing/3 - Exploitation/SQL_Injection/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_8_exploitation/3 - Exploitation/SQL_Injection/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Pen-Testing/3 - Exploitation/metasploit/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_8_exploitation/3 - Exploitation/metasploit/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Pen-Testing/4 - Maintenance Access/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_15_web_applications/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Pen-Testing/5 - Clearing Tracks/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_16_mobile_devices/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Pen-Testing/Hacker Labs/VulnOS 2/INSTALL_AND_SETUP.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_25_penetration_testing_report/Hacker Labs/VulnOS 2/INSTALL_AND_SETUP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Security/Linux_Administration/0_Basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_1_linux_administration/Linux_Administration/0_Basics.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Security/Linux_Administration/1_Anonymize_traffic.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_1_linux_administration/Linux_Administration/1_Anonymize_traffic.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Security/Linux_Administration/2_Firewall_management.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_1_linux_administration/Linux_Administration/2_Firewall_management.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Security/Linux_Administration/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_1_linux_administration/Linux_Administration/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Security/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_1_linux_administration/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Wireless/0_setting_up_wireless_adapter/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_14_wireless_cracking/0_setting_up_wireless_adapter/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Wireless/1_four_way_handshake_method/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_14_wireless_cracking/1_four_way_handshake_method/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Wireless/2_pmkid_hashcat_method/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_14_wireless_cracking/2_pmkid_hashcat_method/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Wireless/2_pmkid_hashcat_method/img.png" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_14_wireless_cracking/2_pmkid_hashcat_method/img.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Wireless/3_password_cracking/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_14_wireless_cracking/3_password_cracking/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Wireless/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_14_wireless_cracking/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/Wireless/wireless_cracker.sh" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_14_wireless_cracking/wireless_cracker.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_14_wireless_cracking/0_setting_up_wireless_adapter/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_14_wireless_cracking/0_setting_up_wireless_adapter/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_14_wireless_cracking/1_four_way_handshake_method/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_14_wireless_cracking/1_four_way_handshake_method/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_14_wireless_cracking/2_pmkid_hashcat_method/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_14_wireless_cracking/2_pmkid_hashcat_method/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_5_programming/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_5_programming/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,13 +30,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/kane/Projects/Ultimate-Guide-To-Advanced-Hacking/hacking_books/ultimate_guide_to_advanced_hacking/chapter_24_cryptocurrency"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/kane/Projects/Ultimate-Guide-To-Advanced-Hacking/hacking_books/ultimate_guide_to_advanced_hacking/chapter_24_cryptocurrency&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_24_cryptocurrency" />
@@ -128,7 +70,14 @@
       <option name="presentableId" value="Default" />
       <updated>1670495373676</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Created chapter division for ultimate guide to advanced hacking">
+      <created>1670497638818</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1670497638818</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,6 +93,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated Project name" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Project name" />
+    <MESSAGE value="Created chapter division for ultimate guide to advanced hacking" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created chapter division for ultimate guide to advanced hacking" />
   </component>
 </project>
