@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cde01cd8-2aeb-4efe-994b-06d06565c60f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="cde01cd8-2aeb-4efe-994b-06d06565c60f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671787532069</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Updated README to accentuate book titles">
+      <created>1671787738317</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1671787738317</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -131,6 +135,7 @@
     <MESSAGE value="Added a small to the Python primer to chapter 5 on Programming" />
     <MESSAGE value="Start of Metasploit tutorial, used Metasploitable 2 the illustrate the vsftpd exploit" />
     <MESSAGE value="Added Linux Administration sections on services and hardening" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Linux Administration sections on services and hardening" />
+    <MESSAGE value="Updated README to accentuate book titles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated README to accentuate book titles" />
   </component>
 </project>
