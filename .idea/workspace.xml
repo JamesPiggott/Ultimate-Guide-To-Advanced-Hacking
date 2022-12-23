@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cde01cd8-2aeb-4efe-994b-06d06565c60f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_6_reconnaissance/1_Reconnaissance/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_6_reconnaissance/1_Reconnaissance/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_8_exploitation/3 - Exploitation/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_8_exploitation/3 - Exploitation/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_8_exploitation/3 - Exploitation/metasploit/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_1_linux_administration/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_1_linux_administration/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +96,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671702701822</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Start of Metasploit tutorial, used Metasploitable 2 the illustrate the vsftpd exploit">
+      <created>1671710059586</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1671710059586</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -117,6 +123,7 @@
     <MESSAGE value="Uppdated chapters on programming and wireless hacking" />
     <MESSAGE value="Simplified organization of chapter 14 Wireless Cracking, noe reduced to just one README.md" />
     <MESSAGE value="Added a small to the Python primer to chapter 5 on Programming" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a small to the Python primer to chapter 5 on Programming" />
+    <MESSAGE value="Start of Metasploit tutorial, used Metasploitable 2 the illustrate the vsftpd exploit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start of Metasploit tutorial, used Metasploitable 2 the illustrate the vsftpd exploit" />
   </component>
 </project>
