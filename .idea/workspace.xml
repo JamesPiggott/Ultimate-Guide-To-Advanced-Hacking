@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cde01cd8-2aeb-4efe-994b-06d06565c60f" name="Changes" comment="" />
+    <list default="true" id="cde01cd8-2aeb-4efe-994b-06d06565c60f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_18_osint/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_18_osint/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_6_reconnaissance/1_Reconnaissance/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_6_reconnaissance/1_Reconnaissance/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,14 +28,10 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/kane/Projects/Ultimate-Guide-To-Advanced-Hacking/hacking_books/ultimate_guide_to_advanced_hacking/chapter_24_cryptocurrency&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_24_cryptocurrency" />
@@ -126,6 +126,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated Project name" />
