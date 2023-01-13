@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cde01cd8-2aeb-4efe-994b-06d06565c60f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_18_osint/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_18_osint/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_6_reconnaissance/1_Reconnaissance/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_6_reconnaissance/1_Reconnaissance/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_24_cryptocurrency/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_24_cryptocurrency/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +30,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -113,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671787738317</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Updated chapter 6 Reconnaissance, added section on Google Dorks">
+      <created>1673373073245</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1673373073245</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -137,6 +144,7 @@
     <MESSAGE value="Start of Metasploit tutorial, used Metasploitable 2 the illustrate the vsftpd exploit" />
     <MESSAGE value="Added Linux Administration sections on services and hardening" />
     <MESSAGE value="Updated README to accentuate book titles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated README to accentuate book titles" />
+    <MESSAGE value="Updated chapter 6 Reconnaissance, added section on Google Dorks" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated chapter 6 Reconnaissance, added section on Google Dorks" />
   </component>
 </project>
