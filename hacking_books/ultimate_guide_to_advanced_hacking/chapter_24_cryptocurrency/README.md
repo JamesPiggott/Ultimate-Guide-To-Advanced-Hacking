@@ -53,4 +53,55 @@ for services or goods in Bitcoin then you can immediately reuse them.
 Finally, is to purchase Bitcoin with cash. This can usually be done at a Bitcoin-themed conference with buyers and 
 sellers in attendance. However, ensure a trusted mediator is present.
 
+### Purchasing Bitcoin at an ATM
+
+This is how I first purchased Bitcoin, and remains the easiest method. This is a guide to the cryptocurrency 
+machines provided by General Bytes, although that information I looked up online. I found a list of Bitcoin machine 
+for a city in Europe. There were several types. Online most of them listed that ID verification was required. Others 
+wanted the buyer to set up an online account beforehand. I decided to forego any kind of account, so ID verification 
+it was. This is not my preferred route as there will be a record, but at least no banks are involved.
+
+I found my ATM at the back of a 24hr convenience store. Approaching the machine I tapped the screen to get past the 
+welcome message. Then I was asked if I would be making a purchase of up to 10.000 (ten thousand) euros, 
+or above that figure. This was my first indication that not everything was as expected. I of course chose the first 
+option. Beforehand I was told that ID would have to be scanned as one of the first tasks, but this may only be 
+necessary if you go above the purchase threshold. I will tap that option next time as a test.
+
+Next, I was asked if I could present a bitcoin wallet address. Of course, I couldn't, I hadn't installed anything on my 
+smartphone. I had only installed Electrum on my laptop, from which I planned to manage my (cold) wallet. However, 
+the ATM menu took this into account and allowed me to scan a QR code from which I could install an app from the 
+Google app store. There is also an iOS option. I was reluctant to install an app that I had not previously 
+investigated, and I also dreaded the possibility of having to fill out an account after all. Luckily, the installation 
+went easily and I was presented with a very simple but empty ledger. There is a QR code at the top of the app 
+screen which you can enlarge by clicking. The ATM request this QR as a temporary 'wallet', I presented the code and 
+the ATM then allowed me to make a purchase. I inserted 50 euros as a trial. After agreeing this was the chosen 
+amount I was quickly presented with an update on the ledger of my app. I had purchased Bitcoin for an amount of 50 
+euros.
+
+It takes a short while for the transaction to have been verified by the Bitcoin network. More on this later, but 
+after making another similar purchase I was the happy owner of a minute amount of Bitcoin. The app even allows you 
+to inspect the blockchain in which the transaction was performed. There is not much information to see, which is of 
+course what we want. My only regret is that there was no option to print out a paper wallet. After arriving back 
+home I decided to transfer the bitcoin purchased to my Electrum wallet.
+
 ## Storing Bitcoin in a cold-wallet
+
+Now we have set up a wallet, we may even consider this to be a cold wallet because it is meant as storage, and 
+little used. Officially you do not need to keep the wallet itself. This file can be deleted if you want, but is NOT 
+encouraged. You can restore your wallet, the private key, from the seed phrase you were asked to make when 
+installing Electrum. Using this seed phrase your private key is resurrected as are all the associated transactions.
+
+So lets transfer money, I mean Bitcoin, from the Bitcoin app I installed standing at the Bitcoin ATM to Electrum. This 
+is surprisingly easy. To do this you need an address to send the Bitcoin to, for every transaction it is best to 
+create a new public address. Electrum allows us to do so. Click on 'receive', enter a description of the transaction 
+and the amount you will receive. Note this is just for your own bookkeeping. Electrum will not pull any Bitcoin from 
+the app, it can't. Instead, you are shown an URI, address and a lighting. Select address. You should see the 
+alphanumeric address, I suppose you do not want to type it over in the app or send it by mail. By clicking on the address itself 
+it also transforms into a QR code.
+
+Back in the Bitcoin app choose 'send bitcoin', with the little camera icon capture the QR code from Electrum. Type 
+in the amount you want to send. Note the little fee at the bottom. If you are sending all of your bitcoin it should 
+be minus the fee. And press send. The Bitcoin will be sent to the Electrum wallet.
+
+In the Electrum wallet you see the transaction pop up after a few seconds. Full confirmation from the mining network 
+will have to wait a little longer.
