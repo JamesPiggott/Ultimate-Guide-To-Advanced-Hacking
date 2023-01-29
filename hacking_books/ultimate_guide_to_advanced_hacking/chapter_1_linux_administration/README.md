@@ -171,6 +171,110 @@ $ sudo nmcli general
 
 ## Processes
 
+## Networking
+
+Here networking does not mean people getting into touch with each, but instead set up your machine to allow it to communciate with the outside world, that could mean another machine on your local network (behind a router or switch) or a machine connected through the internet. On top of that you need to be able to troubleshot the inevitable problems that arise when a network become misconfigured. Finally, you need to know how to keep an eye out on your network and what information is passed around. You never know, you may be the victim of hacking yourself.
+
+Now in chapter 3 you will learn all the basics a would-be hacker should know about networking: protocols, subnetting etc. This section of chapter 1 focuses on the basic commands available to you on Linux, commands you probably already use but here we do a deep dive and put everything together so you can use them as a Linux Administrator would. Lets get into it.
+
+### ping
+
+The ping command is such a lame introduction, but nearly everybody uses it to check if their network is still alive. 
+
+```
+ping [IP_ADDRESS]
+
+ping google.com
+```
+
+What ping does is send ICMP echo requests to the target, in this case google.com. Ping will continue until you stop it with Ctrl-C. Below you can see that all of the packets arrived, and were responded to. Ping is so helpful to also include the IP address. Though I do not want to spoiler chapter 3 ping first sends a DNS request to discover what the IP address of the associated hostname is. Then the ICMP echo request is sent to the target, which hopefully returns a reply. 
+
+```
+┌──(kali㉿kali)-[~]
+└─$ ping google.com           
+PING google.com (142.251.209.142) 56(84) bytes of data.
+64 bytes from ham11s07-in-f14.1e100.net (142.251.209.142): icmp_seq=1 ttl=128 time=38.5 ms
+64 bytes from ham11s07-in-f14.1e100.net (142.251.209.142): icmp_seq=2 ttl=128 time=59.8 ms
+64 bytes from ham11s07-in-f14.1e100.net (142.251.209.142): icmp_seq=3 ttl=128 time=40.8 ms
+64 bytes from ham11s07-in-f14.1e100.net (142.251.209.142): icmp_seq=4 ttl=128 time=41.6 ms
+64 bytes from ham11s07-in-f14.1e100.net (142.251.209.142): icmp_seq=5 ttl=128 time=37.4 ms
+64 bytes from ham11s07-in-f14.1e100.net (142.251.209.142): icmp_seq=6 ttl=128 time=43.8 ms
+64 bytes from ham11s07-in-f14.1e100.net (142.251.209.142): icmp_seq=7 ttl=128 time=39.9 ms
+64 bytes from ham11s07-in-f14.1e100.net (142.251.209.142): icmp_seq=8 ttl=128 time=40.2 ms
+^C
+--- google.com ping statistics ---
+8 packets transmitted, 8 received, 0% packet loss, time 7014ms
+rtt min/avg/max/mdev = 37.380/42.737/59.758/6.679 ms
+```
+
+If you want you can start up Wireshark to observe these packets.
+
+### ifconfig
+
+Chances are you will want to know if an IP address has been assigned to your machine. If this is not the case, it may be because it cannot connect to a DHCP server that hands out IP addresses. A DHCP server is less sexy than it sounds, even your own machien can act as a DHCP server to other machines, but often your switch or router has a built in DHCP server that allocated temporary IP addresses to machines on the local network. To connect to the internet that is enough, the switch or router will send the packets on it remembers who sent them.
+
+Now lets ifonfig
+
+```
+ifconfig
+```
+
+You should see multiple sections, at least two and maybe three of besides a cabled connection you are also using wireless. Sections marked eth0 or wlan0 are of interest for this discussion.
+
+```
+┌──(kali㉿kali)-[~]
+└─$ ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.233.130  netmask 255.255.255.0  broadcast 192.168.233.255
+        inet6 fe80::1413:26df:fc0a:8d7  prefixlen 64  scopeid 0x20<link>
+        ether 00:0c:29:21:ec:c3  txqueuelen 1000  (Ethernet)
+        RX packets 45  bytes 5241 (5.1 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 69  bytes 7306 (7.1 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+```
+
+Lets get rigth to it. Behind the flag marked 'inet'  you cna find your IP address. Note that it is private or local address, it starts with 192 and as uch has no validity anywhere online. The netmask marks the size of the local subdomain. The three sections marked 255 mean they are set and not under the control of the network configuration. This is proven by the broadcats address which ends with 255. With each possible subnet two private IP addresses are always reserved: the first as network ID and the last as broadcast. In this case considering the network configration spans the entirety of the last octet we can deduce that the network ID is 192.168.233.0. Finally there is also an IPv6 address and the MAC address of your NIC
+
+With ifconfig we can directly control the NIC if we want, with the UP and Down commands.
+
+```
+ifconfig down eth0
+```
+
+If you run ifconfig again you will find eth0 is gone. And so will your internet connection be, just use pign to confirm this. If you are running your machine as a virtual machine (which I recommend) then you will not be able to switch off your NIC.
+
+You can easily turn the NIC on again with UP.
+
+```
+ifconfig up eth0
+```
+
+### Netstat
+
+Netstat or network statistics is an application that actively observes all internet connections on your machine, incoming and outgoing. It is very helpful in case you need to troubleshoot your connection or if you want to discover unwanted connections. While ping is fine as a canary down the coal mine it offers very little else. For proper troubleshooting Netstat is your go to program. Lets try it out.
+
+```
+netstat
+```
+
+The result may not exactly be what you expected. There is a lot of information on your screen. At any given time your machine may have dozen or even hundreds of connections. That does not mean that all will be actively transferrign data, but they may...
+
+```
+┌──(kali㉿kali)-[~]
+└─$ netstat                       
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+udp        0      0 192.168.233.130:bootpc  192.168.233.254:bootps  ESTABLISHED
+Active UNIX domain sockets (w/o servers)
+Proto RefCnt Flags       Type       State         I-Node   Path
+unix  3      [ ]         STREAM     CONNECTED     19535    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     18595    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     18592    /run/user/1000/bus
+...
+```
+
+Luckily this is less bad than it looks. We got one active internet connection and then a huge number of active sockets. Lets try something. Open up another terminal and use to ping Google again. While you keep that running run netstat one more time.
 
 ## Hardening
 
@@ -180,6 +284,11 @@ Now that you have gone through a thorough introduction to administrating Linux l
 
 Before we begin it is handy to set some sort of benchmark for hardening. With Lynis we can do exactly that. Install the application and run the audit test on your Ubuntu system.
 
+```
+$ sudo apt -y install lynis
+$ sudo lynis --version
+$ sudo lynis audit system
+```
 
 With Ubuntu you should have a score of somehwere in the low 60s. Using the guide below we cna crank that up about 20 points. No system is ever perfectly hardened, if it were you woud not be able to run any applications on it.
 
@@ -191,12 +300,8 @@ sudo apt update && sudo apt -y upgrade && sudo apt -y dist-upgrade && sudo apt -
 
 ### Rename the system
 
-It is vital to ensure the system has a prop```
-$ sudo apt -y install lynis
-$ sudo lynis --version
-$ sudo lynis audit system
-```
-er logical so you can easily distinguish it from others. You can either use the hostname command or change the hostname file
+It is vital to ensure the system has a proper logical name so you can easily distinguish it from others. You can either 
+use the hostname command or change the hostname file
 
 ```
 $ sudo hostname [new_system_name]
