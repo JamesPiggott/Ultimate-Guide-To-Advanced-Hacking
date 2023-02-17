@@ -171,9 +171,150 @@ $ sudo nmcli general
 
 ## Processes
 
+At any given time your Linux OS can be running a large number of applications, or processes. It is easy enough to 
+stop a GUI application, but if it is a background process you have no way to stop it. Unless you use the command line.
+
+### Top
+
+Top or (table of processes) is exactly what the name suggests, it prints out the name of all the processes 
+registered with the Kernel. It is the first go-to command I use to see what is up.
+
+```
+$ top
+top - 12:48:17 up  3:51,  1 user,  load average: 2.60, 2.38, 1.33
+Tasks: 359 total,   1 running, 358 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.9 us,  0.1 sy,  0.0 ni, 99.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   5899.8 total,    887.1 free,   2931.1 used,   2081.6 buff/cache
+MiB Swap:   2048.0 total,   1686.5 free,    361.5 used.   2655.7 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                                                                                                                                                                                
+    939 root      20   0 1566408  19696    644 S   1.6   0.3   1:30.99 containerd                                                                                                                                                                                                                              
+  30080 root      20   0       0      0      0 I   1.0   0.0   0:00.45 kworker/7:1-events                                                                                                                                                                                                                       
+    810 root      20   0  321884   5616   4228 S   0.7   0.1   0:33.67 vmtoolsd                                                                                                                                                                                                                                    
+  20208 root      20   0       0      0      0 I   0.3   0.0   0:10.59 kworker/6:0-events                                                                                                                                             
+  20263 root      20   0       0      0      0 I   0.3   0.0   0:13.56 kworker/4:1-events                                                                                                                                             
+  27521 root      20   0       0      0      0 I   0.3   0.0   0:08.10 kworker/3:0-events                                                                                                                                             
+  29419 root      20   0       0      0      0 I   0.3   0.0   0:09.84 kworker/2:1-events                                                                                                                                             
+  30192 root      20   0       0      0      0 I   0.3   0.0   0:00.26 kworker/1:1-events_freezable                                                                                                                                   
+      1 root      20   0  168640   8728   5460 S   0.0   0.1   0:06.16 systemd                                                                                                                                                    
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.05 kthreadd                
+```
+
+As you can see you instantly get an overview of what is going on with your system, it is certainly overwhelmign for 
+anyone who does not regularly use top. Note that top refreshes every 3 seconds, also you need to use Ctrl-C to exit 
+from top. So what does everything in the table mean. I personally first check out the '%CPU' and '%MEM' columns. As 
+their names suggests this indicates how much CPU usage or memory a process takes from the system. Those that use the 
+most CPU cycles are listed at the top in descending order. Top itself should also be listed, it is a great way to 
+determine which process is hogging all of the resources.
+
+The other columns have the following meaning
+ - PID: Unique Process ID given to each process.
+ - User: Username of the process owner.
+ - PR: Priority given to a process while scheduling.
+ - NI: ‘nice’ value of a process.
+ - VIRT: Amount of virtual memory used by a process.
+ - RES: Amount of physical memory used by a process.
+ - SHR: Amount of memory shared with other processes.
+ - S: state of the process
+    ‘D’ = uninterruptible sleep
+    ‘R’ = running
+    ‘S’ = sleeping
+    ‘T’ = traced or stopped
+    ‘Z’ = zombie
+
+Now, PID is the unique number associated with a process. We can use it to kill a process, but that is for the next 
+section. The user is self-evident, it is the user that has started the process. S stands for process state. Most are 
+asleep, awaiting a change brought on by the OS or by the user. Those marked with R are running. Top should be 
+running and can be stopped using Ctrl-C as mentioned before. Finally, as the top list cane be very long use the UP 
+and DOWN arrows to navigate through the list.
+
+### PS
+
+The second command in this section is ps, or process. With it we can directly control a process, usually that means 
+sorting through the list of all process and then killing the one we want ended. Lets start with just a plan 'ps'.
+```
+$ ps
+
+    PID TTY          TIME CMD
+  30340 pts/0    00:00:00 bash
+  30431 pts/0    00:00:00 ps
+```
+
+It only shows the two running processes of this user, bash indicates the command and ps the ps command itself. Again 
+there are several columns of note
+
+ - PID: again indicates the process number, should be just the same as with Top.
+ - TTY: terminal type
+ - TIME: duration process have been running
+ - CMD: name of command that launched process
+
+```
+$ ps -u
+
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+test        1969  0.0  0.0 172652  4696 tty2     Ssl+ 08:57   0:00 /usr/lib/gdm3/gdm-x-session --run-script env 
+GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --systemd --session=ubuntu
+test        1971  2.2  1.0 344676 65592 tty2     Sl+  08:57   5:29 /usr/lib/xorg/Xorg vt2 -displayfd 3 -auth /run/user/1000/gdm/Xauthority -background none -noreset -keeptty -verbose 3
+test        1989  0.0  0.1 199232  9740 tty2     Sl+  08:57   0:00 /usr/libexec/gnome-session-binary --systemd --systemd --session=ubuntu
+test       30340  0.0  0.0  20040  5596 pts/0    Ss   12:47   0:00 bash
+test       30446  0.0  0.0  20128  3276 pts/0    R+   13:03   0:00 ps -u
+```
+
+This will show all processes belonging to the current user. It also adds some more columns that are self-explanatory 
+if you have studied top
+
+```
+$ ps -A
+```
+List every process belonging to every user.
+
+### kill
+
+There is blood in the water lets kill a process. There are in fact many ways this can be done. Use the -L option to 
+list them.
+
+```
+$ kill -L
+
+ 1) SIGHUP	 2) SIGINT	 3) SIGQUIT	 4) SIGILL	 5) SIGTRAP
+ 6) SIGABRT	 7) SIGBUS	 8) SIGFPE	 9) SIGKILL	10) SIGUSR1
+11) SIGSEGV	12) SIGUSR2	13) SIGPIPE	14) SIGALRM	15) SIGTERM
+16) SIGSTKFLT	17) SIGCHLD	18) SIGCONT	19) SIGSTOP	20) SIGTSTP
+21) SIGTTIN	22) SIGTTOU	23) SIGURG	24) SIGXCPU	25) SIGXFSZ
+26) SIGVTALRM	27) SIGPROF	28) SIGWINCH	29) SIGIO	30) SIGPWR
+31) SIGSYS	34) SIGRTMIN	35) SIGRTMIN+1	36) SIGRTMIN+2	37) SIGRTMIN+3
+38) SIGRTMIN+4	39) SIGRTMIN+5	40) SIGRTMIN+6	41) SIGRTMIN+7	42) SIGRTMIN+8
+43) SIGRTMIN+9	44) SIGRTMIN+10	45) SIGRTMIN+11	46) SIGRTMIN+12	47) SIGRTMIN+13
+48) SIGRTMIN+14	49) SIGRTMIN+15	50) SIGRTMAX-14	51) SIGRTMAX-13	52) SIGRTMAX-12
+53) SIGRTMAX-11	54) SIGRTMAX-10	55) SIGRTMAX-9	56) SIGRTMAX-8	57) SIGRTMAX-7
+58) SIGRTMAX-6	59) SIGRTMAX-5	60) SIGRTMAX-4	61) SIGRTMAX-3	62) SIGRTMAX-2
+63) SIGRTMAX-1	64) SIGRTMAX	
+```
+
+We are interested in #9 SIGKILL. If we want to kill a process all we have to do is use option -9 and add the PID of 
+that process
+
+```
+$ kill -9 [PID]
+
+$ kill -9 30340
+```
+
+This will kill the terminal, as this PID belongs to Bash as you can see in the earlier results. The terminal can be 
+easily restarted using Ctrl-Alt-T.
+
+### NICE
+
+Finally, there is nice, you saw the column in top as NI. Basically it prioritizes the process. The default value is 
+0 but we can shift a process between -20 and 19. I rarely use NICE, but this section is only complete if I mentioned it.
+
 ## Networking
 
-Here networking does not mean people getting into touch with each, but instead set up your machine to allow it to communciate with the outside world, that could mean another machine on your local network (behind a router or switch) or a machine connected through the internet. On top of that you need to be able to troubleshot the inevitable problems that arise when a network become misconfigured. Finally, you need to know how to keep an eye out on your network and what information is passed around. You never know, you may be the victim of hacking yourself.
+Here networking does not mean people getting into touch with each, but instead set up your machine to allow it to 
+communicate with the outside world, that could mean another machine on your local network (behind a router or switch)
+or a machine connected through the internet. On top of that you need to be able to troubleshoot the inevitable 
+problems that arise when a network become incorrectly configured. Finally, you need to know how to keep an eye out on 
+your network and what information is passed around. You never know, you may be the victim of hacking yourself.
 
 Now in chapter 3 you will learn all the basics a would-be hacker should know about networking: protocols, subnetting etc. This section of chapter 1 focuses on the basic commands available to you on Linux, commands you probably already use but here we do a deep dive and put everything together so you can use them as a Linux Administrator would. Lets get into it.
 
@@ -275,6 +416,17 @@ unix  3      [ ]         STREAM     CONNECTED     18592    /run/user/1000/bus
 ```
 
 Luckily this is less bad than it looks. We got one active internet connection and then a huge number of active sockets. Lets try something. Open up another terminal and use to ping Google again. While you keep that running run netstat one more time.
+
+I use netstat also when I want to discover the application that is using a particular port. In software development 
+this is sometimes necessary when I inadvertently assign the same port number two multiple applications.
+
+```
+netstat -nlp | grep [PORT_NUMBER]
+```
+
+Here -nlp that does not mean natural language processing. Instead the n means list using a numeric value, l means 
+those processes that are listening and p means programs. So list all programs that are listening using a numeric 
+filter which comes after the pipe |.
 
 ## Hardening
 
