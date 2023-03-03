@@ -125,7 +125,25 @@ So far our little code lines have been simple, but programs are supposed to be g
 
 ### Compile a C program
 
-The next section of the book lasts about 40 pages. It uses C to explain the uses of a compiled language. Readers are taught to use GDP to debug code and use various tools to attempt to detect or create exploits.
+The C programming language was considered high-level when it was introduced, meaning programmers were far removed 
+from accessing the underlying the system. This was in contrast with Assembly which requires programmers to directly 
+access memory registers. Some programmers snubbed their nose at C, but with efficient libraries that are partly 
+written in Assembly the C programming language is effective, and a lot easier to program or master than Assembly. 
+Learning both C and Assembly is useful for debugging and creating malware. Using other high-level languages such as 
+Java or scripted languages such as Python and Bash are more useful for creating hacking tools. Exploits are 
+typically written in C or Assembly and delivered with a script written in Python, Perl or Bash. As such it is vital 
+to learn C.
+
+That was my little introduction to C, a programming language vital for many system but more often underestimated as 
+archaic. In this section of the chapter I want to achieve several things:
+ - Instruct you on the basics of the C programming language, how to write a program, compile it and run it
+ - Explain how computer memory works and how this relates to a program written in C.
+ - Debug a program written in C with gdb
+ - Attempt at reverse engineering a C program
+
+That is a lot of ground to cover, but it is a vital setup for the other chapters such as those covering malware and 
+threat hunting. I won't be covering all the syntax of C, I think you will either know it or learn that from a 
+different resource. Let's dive right into it with a proper example program.
 
 ```
 $ gcc c_program.c -o c_program
