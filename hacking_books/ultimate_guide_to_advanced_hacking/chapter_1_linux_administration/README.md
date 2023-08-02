@@ -430,7 +430,7 @@ filter which comes after the pipe |.
 
 ## Hardening
 
-Now that you have gone through a thorough introduction to administrating Linux lets create a hardeneed version of Ubuntu. Try to work along, that will bring everything you need to know together.
+Now that you have gone through a thorough introduction to administrating Linux lets create a hardened version of Ubuntu. Try to work along, that will bring everything you need to know together.
 
 ### Testing the hardened system with Lynis
 
@@ -442,7 +442,7 @@ $ sudo lynis --version
 $ sudo lynis audit system
 ```
 
-With Ubuntu you should have a score of somehwere in the low 60s. Using the guide below we cna crank that up about 20 points. No system is ever perfectly hardened, if it were you woud not be able to run any applications on it.
+With Ubuntu, you should have a score of somewhere in the low 60s. Using the guide below we can crank that up about 20 points. No system is ever perfectly hardened, if it were you would not be able to run any applications on it.
 
 ### Updating the system
 
@@ -521,4 +521,95 @@ Now that you have configured your Ubuntu lets see what the hardening score is no
 
 ```
 $ sudo lynis audit system
+```
+
+It will probably only be marginally better, to really get to above 80 we need to tackle most issues listed in the Lynis report. We will dom exactly that, using a lot of the commands we studied in this chapter.
+
+#### Your profile contains one or more old-style configuration entries [GEN-0020]
+https://cisofy.com/lynis/controls/GEN-0020/
+
+This is a warning, which is more serious than just a recommendation. Basically it means your version of Lynis is out of date. Aptitude probably contains an older version of Lynis. We will remove and replace it with a version of Lynis pulled directly from its GitHub page.
+
+```	  
+apt remove lynis
+apt-get purge lynis
+apt-get purge --auto-remove lynis
+```
+That should have removed Lynis. Now lets download the source code and install it.
+```	  
+cd /usr/local
+rm -rf lynis.old
+mv lynis lynis.old
+git clone https://github.com/CISOfy/lynis
+chown -R root:root lynis
+chmod 755 lynis/lynis
+cd /usr/sbin
+mv lynis lynis.old
+ln -s /usr/local/lynis/lynis lynis
+```  
+If you go over the lines one by one they make sense, but I suggest you place them in a file called 'updatelynis' as you will be using it regularly. You can run it as follows.
+```
+sh updatelynis
+```
+The first time you might get an error stating the directory lynis does not exist, that makes sense. Running the script a second time should run smoothly.
+
+#### Configure maximum password age in /etc/login.defs [AUTH-9286]
+https://cisofy.com/lynis/controls/AUTH-9286/
+	  
+Set values to the following in the file /etc/login.defs
+```
+	PASS_MAX_DAYS   180
+	PASS_MIN_DAYS   7
+	PASS_WARN_AGE   14
+```
+This will set the maximum password age to 180 days, and the password cannot be reset during the first 7 days. Also 14 days before the password expires the user is given a warning when they log in.
+
+#### Consider restricting file permissions [FILE-7524]
+This is an easy one, but to get every file you will need to scour the lynis.log file. Lets give that a try. I know for a fact that the requested permission should be 750, so we can search for that
+```
+cat /var/log/lynis.log | grep 700
+```
+Sure enough the cat command spits out a number of lines, below are lines from my Kali machine.
+
+2023-08-02 07:07:51 Found flags:    (rw nosuid relatime size=8143852k nr_inodes=2035963 mode=755 inode64) 
+2023-08-02 07:07:51 Found flags:    (rw nosuid nodev noexec relatime size=1636812k mode=755 inode64) 
+2023-08-02 07:08:21 Outcome: permissions of file /etc/cron.d are not matching expected value (755 != 700)
+2023-08-02 07:08:21 Outcome: permissions of file /etc/cron.daily are not matching expected value (755 != 700)
+2023-08-02 07:08:21 Outcome: permissions of file /etc/cron.hourly are not matching expected value (755 != 700)
+2023-08-02 07:08:21 Outcome: permissions of file /etc/cron.weekly are not matching expected value (755 != 700)
+2023-08-02 07:08:21 Outcome: permissions of file /etc/cron.monthly are not matching expected value (755 != 700)
+
+As you can see 5 files do not have the correct values, for your machine they may differ but cron is definitely the usual suspect. With cron we can run any service or script as root at a specified time. It is thus dangerous that non-root users and groups should have write access. You can also alter the grep command above to find more culprits, for example for some files the access is restricted to 600.
+
+```
+chmod 600 /etc/cron.deny
+chmod 600 /etc/crontab
+chmod 600 /etc/ssh/sshd_config
+chmod 700 /etc/cron.d
+chmod 700 /etc/cron.hourly
+chmod 700 /etc/cron.daily
+chmod 700 /etc/cron.weekly
+chmod 700 /etc/cron.monthly
+```
+
+#### Harden compilers like restricting access to root user only [HRDN-7222]
+https://cisofy.com/lynis/controls/HRDN-7222/
+
+Compilers can be dangerous as it could be a way for non-root users to bypass controls especially in conjunction with FILE-7524. The usual suspect is gcc, the generic compilers for Linux. Let's locate it with the which command.
+```
+which gcc
+
+/usr/bin/gcc
+```
+No surprise there, 'ls -la /usr/bin/gcc' reveals it 777 access rights. We now have a choice, remove gcc but that might cause the OS to be unable to compile anything ot give it more restrictive rights. Let's do the latter.
+```
+apt remove gcc
+```
+Another culprit is the as or assembly compiler. This gets the same treatment. 
+
+#### Purge old/removed packages (38 found) with aptitude purge or dpkg --purge command. This will cleanup old configuration files, cron jobs and startup scripts. [PKGS-7346]
+https://cisofy.com/lynis/controls/PKGS-7346/
+
+```
+apt purge $(dpkg -l | grep '^rc' | awk '{print $2}')
 ```
