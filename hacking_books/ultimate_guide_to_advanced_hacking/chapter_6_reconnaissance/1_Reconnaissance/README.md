@@ -1,12 +1,12 @@
 # Chapter 6 Reconnaissance
 
-Before being able to hack a target we need to know as much we can about the target. It mau surprise you, or it may not, that for most targets a lot of information can be found online, even with a simple Google search. These days most time pentesting a target will go into reconnaisance. If done properly, and it being fruitful finding possible vulnerabilities will be relatively easy. While performing reconnaisance as described in this chapter it is vital to understand the difference between passive and active recon. Only during the latter are packets actively being sent to the target. It is something you may well want to consider delaying until you have gathered all publicly available information on the target. It is also important to note that the online resources you consult may well keep a record of your searched. Were you logged into Google while you searching for that Excel file on the target website? That may be hard to deny if you are standing in court. Were possible, cover your tracks, use TOR, VPNs and broswers in private mode. 
+Before being able to hack a target we need to know as much we can about it. It may surprise you, or it may not, that for most targets a lot of information can be found online, even with a simple Google search. These days most time spent penetration testing a target will go into reconnaissance. If done properly, and it being fruitful, finding possible vulnerabilities will be relatively easy. While performing reconnaissance as described in this chapter it is vital to understand the difference between passive and active recon. Only during the latter are packets actively being sent to the target. It is something you may well want to consider delaying until you have gathered all publicly available information on the target. It is also important to note that the online resources you consult may well keep a record of your search. Were you logged into Google while searching for that Excel file on the target website? That may be hard to deny if you are standing in court. Were possible, cover your tracks, use TOR, VPNs and browsers in private mode. 
 
 Let's get started
 
 ## Network Exploration vs Web Exploration
 
-This chapter is divided into two parts. The first focuses on network exploration, the act of discovering as many systems connected online that can be traced to a company or a person. Basically, it comes to finding as many IP addresses, or IP ranges as possible. The second part, web exploration, specifically is about extracting information from websites and domains. The second part includes fingerprinting and gathering information on target websites. While the first part is considered passive, in that never should a single data packet reach the target, the second part is active. You are sending data packets to the target and thus because of your intentions might be violating laws in certain jurisdictions.
+This chapter is divided into two parts. The first focuses on network exploration, the act of discovering as many systems connected online that can be traced to a company or a person. Basically, it comes down to finding as many IP addresses, or IP ranges as possible. The second part, web exploration, specifically, is about extracting information from websites and domains. The second part includes fingerprinting and gathering information on target websites. While the first part is considered passive, in that never should a single data packet reach the target, the second part is active. You are sending data packets to the target and thus because of your intentions you might be violating laws in certain jurisdictions.
 
 With Reconnaissance, look for the following pieces of information:
  - Usernames, profile names and or email addresses
@@ -17,14 +17,14 @@ With Reconnaissance, look for the following pieces of information:
  - Software and OS types, names and versions
  - Technical documentation, such as guides for systems.
  
-You can manually trawl through source or use a tool. But the following are interesting places to look.
+You can manually trawl through a source or use a tool. But the following are interesting places to look.
  - Personal websites, blogs etc
  - As many search engines as possible (Google, Bing and DuckDuckGo)
  - Social media: LinkedIn, Facebook, Twitter and Instagram
  - Other accounts: GitHub, forums, newsgroups etc
  - Public databases: ICANN, domain name registrars etc
 
-A lot of what you will do in this chapter is related to DNS, or Domain Name System, the mechanism with which hostnames are translated to IP addresses. DNS will return repeatedly as a topic of this chapter, so you might as well something about it.
+A lot of what you will do in this chapter is related to DNS, or Domain Name System, the mechanism with which hostnames are translated to IP addresses. DNS will return repeatedly as a topic of this chapter, so you might as well know something about it.
 
 ``` 
 DNS: Domain Name System
@@ -36,10 +36,38 @@ There are plenty of tools available that will trawl all available information on
 
 ### Dig
 If you know the target’s name and domain then you can use Dig to lookup its IP address.
-Dig is included with most Linux distributions, so simply type in the command into the Terminal with the target domain name appended. The output you get should be similar
+Dig is included with most Linux distributions, so simply type in the command into the Terminal with the target domain name appended. The output you get should be similar to the one you ee below. [HOSTNAME] and [IP_ADDRESS] are the variables you will enter or see returned
+
+```
+$ dig [HOSTNAME]
+
+; <<>> DiG 9.18.12-1ubuntu1.1-Ubuntu <<>> [HOSTNAME]
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 58822
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;[HOSTNAME].		IN	A
+
+;; ANSWER SECTION:
+[HOSTNAME].	5	IN	A	[IP_ADDRESS]
+
+;; Query time: 15 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Mon Aug 07 09:34:02 CEST 2023
+;; MSG SIZE  rcvd: 60
+```
 
 ### ARIN Search
-There are also online resources we can consult. Large companies are likely to reserve IP ranges, they do so with ARIN or the American Registry of Internet Numbers. Using WHOIS we can perform a lookup on a company name and check what ranges they own.
+There are also online resources we can consult. Large companies are likely to reserve IP ranges, they do so with ARIN or the American Registry of Internet Numbers. Using WHOIS we can perform a lookup on a company name and check what ranges they own. Whoise is usually already installed on Kali Linus, but if you are using something like Ubuntu then Apt is your friend.
+
+```
+$ sudo apt install whois
+$ whois google.com
+```
 
 ### Google Dorks
 
@@ -101,7 +129,7 @@ A final note on Google keywords, or Dorks as they are known. While Google is now
 ### Netcraft
 
 Netcraft is from the UK and tracks data regarding web servers. The paid service offers users incredible insights 
-into who is the most reliable hosting company or what the market share is of a particular vendor. However you can 
+into who is the most reliable hosting company or what the market share is of a particular vendor. However, you can 
 also find information regarding particular websites, such as your target URL.
 
 You can do this from the homepage of Netcraft. About two-thirds of the way down you will see the label "What's that 
@@ -110,7 +138,7 @@ site running?". After entering your target you will get an overview that will ma
 ### Whois
 
 Whois is more old-school, you can in fact just run it from your Terminal. Whois comes packaged with Kali, if your 
-are using Ubuntu you will have to use your favorite package manager to install it. Afterwards usage is easy, just 
+are using Ubuntu you will have to use your favorite package manager to install it. Afterward usage is easy, just 
 type in whois with your target url.
 
 ```
@@ -155,9 +183,9 @@ After navigate to localhost port 5001 (127.0.0.1:5001) you can start a new scan.
 ## Web Exploration
 
 ### HTTrack
-This is a simple tool ith which you can download websites. Afterwards it is possible to run the website locally so you can peruse it for weaknesses offline at your own leisure. While the tool is simple to use there are some limitations. A lot of websites are big, filled with Gigabytes of data. This tool is more suitable to download and emulate personal and hobbyist webpages. For ease of use HTTrack also comes with a GUI version, WebHTTrack. So lets first install them on Ubuntu.
+This is a simple tool ith which you can download websites. Afterward it is possible to run the website locally so you can peruse it for weaknesses offline at your own leisure. While the tool is simple to use there are some limitations. A lot of websites are big, filled with Gigabytes of data. This tool is more suitable to download and emulate personal and hobbyist webpages. For ease of use HTTrack also comes with a GUI version, WebHTTrack. So lets first install them on Ubuntu.
 
-Afterwards it is easy to start the software, just type in webhttrack without sudo.
+Afterward it is easy to start the software, just type in webhttrack without sudo.
 
 ```
 $ webhttrack
@@ -182,9 +210,10 @@ If a website uses a CMS such as Wordpress then this tool will not copy that whol
 ### TheHarvester
 ### Shodan
 
-## People Hunting
+## Final Words
+Reconnaissance is a very large topic, too large to be covered in one chapter or even one book. It is also the most difficult step. I often get stuck performing a recce on a target because I feel I do not have enough information to proceed, the same goes for the next chapter on Scanning.
 
-### PIPL
-### EagleEye
-### OSINT.rest
-### Data Viper
+If you feel stuck, just proceed to the next step. Hacking is an iterative activity, and you will frequently need to come back to redo or at least verify some steps. Finally, I want to point out the larger world of OSINT, or Open-Source Intelligence of which reconnaissance forms a part. I have a whole separate chapter written on (Chapter 18) which points out that it may be possible to find the very compromising information on a target you were looking for without having to hack the target.
+
+## Resources
+ - Vinny Troia (PhD) (2020). Hunting Cyber Criminals: A Hacker's Guide to Online Intelligence Gathering Tools and Techniques. John Wiley & Sons, Inc.

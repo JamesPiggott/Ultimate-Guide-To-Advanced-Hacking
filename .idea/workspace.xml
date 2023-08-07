@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cde01cd8-2aeb-4efe-994b-06d06565c60f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_24_cryptocurrency/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_24_cryptocurrency/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_18_osint/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_18_osint/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_6_reconnaissance/1_Reconnaissance/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_6_reconnaissance/1_Reconnaissance/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +20,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
   <component name="ProjectId" id="2IcysdkWQc86NcO5yLVgL9OfQgy" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -27,11 +31,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/jjhpi/Desktop/OneDrive/Projects/Ultimate-Guide-To-Advanced-Hacking",
+    "settings.editor.selected.configurable": "preferences.editor"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_24_cryptocurrency" />
@@ -133,7 +142,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated Project name" />
