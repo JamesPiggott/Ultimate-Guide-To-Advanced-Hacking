@@ -242,3 +242,29 @@ Using the same command with --show will print the password
 ```
  .\hashcat64.exe -m 16800 .\TEST3.16800 -a 0 -w 4 --force ".\rockyou.txt"
 ```
+
+# Deauthentication or Denial of Service Attack
+
+Probably the single biggest failure of the Wi-Fi or 802.11 protocol is its deauth frame. If used by a bad actor it can remove the connection between a user and an AP. The bad actor does not need access to the AP network (no password needed) not do they need special privileges. As we have see before sending the deauth frame and forcing users to re-authenticate is a necessary step in the Four-way Handshake method of cracking the network and obtaining its password. But, if we continue to send deauthentication frames to the AP we can block any user from gaining access. It is a glaring ommission only offset by stringent configuration by administrators. Yet, most don't even do that.
+
+Lets look at an example of a deauth attack
+
+```
+# aireplay-ng  --deauth 10 -a [AP_MAC_ADDRESS] wlan0mon
+```
+It is a simple enough command to understand. With 'airodump-ng' we uncover the BSSID or MAC Address of the AP. With 'aireplay-ng' we use it to send deauth frames, in this case just 10.
+
+![alt text](images/deauth_attack.jpg?raw=true)
+
+It looks as though this attack was successful. Somebody on the network had for a few seconds no internet. Now this attack was harmless, but I could keep the 'aireplay-ng' running forever, then it would become a Denial of Service attack. But lets apply our Bash scripting skills to this problem instead.
+
+```
+#! /bin/bash
+
+for i in {1..5000}
+do
+    aireplay-ng  --deauth 10 -a 00:A2:EE:FB:5B:40 wlan0mon
+    sleep 60s
+done
+```
+It is a simple script. We first declare on line 1 that this is a Bash script. We then start a for-loop that runs for 5000 iterations. It does only two things, run the aireplay-ng command with settings to create 10 deauth frames targeting the BSSID of an AP. Then sleep for 60 seconds and begin the process over again. Anyone logged into this AP would thus be hampered with intermittent network outages. Irritating, illegal, but hardly difficult to perform. 

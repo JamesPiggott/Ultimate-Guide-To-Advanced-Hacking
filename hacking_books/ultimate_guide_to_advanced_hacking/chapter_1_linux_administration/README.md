@@ -424,7 +424,7 @@ this is sometimes necessary when I inadvertently assign the same port number two
 netstat -nlp | grep [PORT_NUMBER]
 ```
 
-Here -nlp that does not mean natural language processing. Instead the n means list using a numeric value, l means 
+Here -nlp that does not mean natural language processing. Instead, the n means list using a numeric value, l means 
 those processes that are listening and p means programs. So list all programs that are listening using a numeric 
 filter which comes after the pipe |.
 

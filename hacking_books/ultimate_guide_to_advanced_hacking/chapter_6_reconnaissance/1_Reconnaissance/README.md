@@ -166,17 +166,18 @@ Shodan is a search engine for internet connected devices. It queries every IP an
 Automated Network Exploration
 
 ### SpiderFoot
-SpiderFoot is an easy to install and use opensource automated intelligence gathering tool. It integrates numerous sources such as Shodan, VirusTotal and Censys. There is also a premium version, which we will discuss later.
+SpiderFoot is an easy to install and use opensource automated intelligence gathering tool. It integrates numerous sources such as Shodan, VirusTotal and Censys. There is also a premium version, which we will discuss later. For this chapter we will only be using the application as a passive tool, performing recon on ip addresses, hostnames and people without sending packets to the first two targets.
 
-```wget https://github.com/smicallef/spiderfoot/archive/v4.0.tar.gz
+```
+wget https://github.com/smicallef/spiderfoot/archive/v4.0.tar.gz
 tar zxvf v4.0.tar.gz
 cd spiderfoot-4.0
 pip3 install -r requirements.txt
 python3 ./sf.py -l 127.0.0.1:5001
 ```
 
-As you can see installing SpiderFoot is very easy, as it is a community supported you can even make our own changes, or use part of the tool for your own benefit.
-After navigate to localhost port 5001 (127.0.0.1:5001) you can start a new scan. Selecting the All option is the shotgun approach, the last of the four options: passive, will mean you remain mostly undetected.
+As you can see installing SpiderFoot is easy, as it is a community supported you can even make our own changes, or use part of the tool for your own benefit.
+After the last Python command confirms the application is running navigate to localhost on port 5001 (127.0.0.1:5001) using your browser. Without further ado select "New scan". Selecting the All option is the shotgun approach, the last of the four options: passive, will mean you remain mostly undetected. We of course select the last option
 
 ### Recon-NG
 

@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cde01cd8-2aeb-4efe-994b-06d06565c60f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_14_wireless_cracking/images/deauth_attack.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_18_osint/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_18_osint/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_14_wireless_cracking/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_14_wireless_cracking/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_1_linux_administration/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_1_linux_administration/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_21_dark_web/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_21_dark_web/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_3_networking/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_3_networking/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_6_reconnaissance/1_Reconnaissance/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_6_reconnaissance/1_Reconnaissance/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,9 +24,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2IcysdkWQc86NcO5yLVgL9OfQgy" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -31,16 +35,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/jjhpi/Desktop/OneDrive/Projects/Ultimate-Guide-To-Advanced-Hacking",
-    "settings.editor.selected.configurable": "preferences.editor"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jjhpi/Desktop/OneDrive/Projects/Ultimate-Guide-To-Advanced-Hacking&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_24_cryptocurrency" />
@@ -50,11 +54,11 @@
       <recent name="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_20_command_and_control" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jjhpi\Desktop\OneDrive\Projects\Ultimate-Guide-To-Advanced-Hacking\hacking_books\ultimate_guide_to_advanced_hacking\chapter_14_wireless_cracking\images" />
       <recent name="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_25_penetration_testing_report" />
       <recent name="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_11_clearing_tracks" />
       <recent name="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_10_maintenance_escalation" />
       <recent name="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_8_exploitation" />
-      <recent name="$PROJECT_DIR$/hacking_books/ultimate_guide_to_advanced_hacking/chapter_7_scanning" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -129,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1673373073245</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Further updates on chapter 6, moved several sections to chapter 18 OSINT">
+      <option name="closed" value="true" />
+      <created>1691396018341</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1691396018341</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -153,6 +165,7 @@
     <MESSAGE value="Added Linux Administration sections on services and hardening" />
     <MESSAGE value="Updated README to accentuate book titles" />
     <MESSAGE value="Updated chapter 6 Reconnaissance, added section on Google Dorks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated chapter 6 Reconnaissance, added section on Google Dorks" />
+    <MESSAGE value="Further updates on chapter 6, moved several sections to chapter 18 OSINT" />
+    <option name="LAST_COMMIT_MESSAGE" value="Further updates on chapter 6, moved several sections to chapter 18 OSINT" />
   </component>
 </project>
