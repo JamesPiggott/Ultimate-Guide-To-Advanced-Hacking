@@ -348,7 +348,18 @@ PING google.com (142.251.209.142) 56(84) bytes of data.
 rtt min/avg/max/mdev = 37.380/42.737/59.758/6.679 ms
 ```
 
-If you want you can start up Wireshark to observe these packets.
+If you want you can start up tcpdump or Wireshark to observe these packets.
+
+### traceroute / tracepath
+
+Both command basically do the same thing but traceroute will probably have to be installed with apt while tracepath is now a staple with most Debian systems. Also the latter does not require root privileges. 
+Both commands will show the route packets had to take between source and destination
+
+```
+root@user:/home/user# tracepath nostarch.com
+```
+
+It may not be the most useful command, it comes from a time when routing was more sensitive and could cause delay. Sadly however, a lot of hops now no longer display data, to prevent DDOS attacks close to a target.
 
 ### ifconfig
 
@@ -375,7 +386,7 @@ eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
 
-Lets get rigth to it. Behind the flag marked 'inet'  you cna find your IP address. Note that it is private or local address, it starts with 192 and as uch has no validity anywhere online. The netmask marks the size of the local subdomain. The three sections marked 255 mean they are set and not under the control of the network configuration. This is proven by the broadcats address which ends with 255. With each possible subnet two private IP addresses are always reserved: the first as network ID and the last as broadcast. In this case considering the network configration spans the entirety of the last octet we can deduce that the network ID is 192.168.233.0. Finally there is also an IPv6 address and the MAC address of your NIC
+Lets get right to it. Behind the flag marked 'inet'  you cna find your IP address. Note that it is private or local address, it starts with 192 and as uch has no validity anywhere online. The netmask marks the size of the local subdomain. The three sections marked 255 mean they are set and not under the control of the network configuration. This is proven by the broadcats address which ends with 255. With each possible subnet two private IP addresses are always reserved: the first as network ID and the last as broadcast. In this case considering the network configration spans the entirety of the last octet we can deduce that the network ID is 192.168.233.0. Finally there is also an IPv6 address and the MAC address of your NIC
 
 With ifconfig we can directly control the NIC if we want, with the UP and Down commands.
 
@@ -415,7 +426,7 @@ unix  3      [ ]         STREAM     CONNECTED     18592    /run/user/1000/bus
 ...
 ```
 
-Luckily this is less bad than it looks. We got one active internet connection and then a huge number of active sockets. Lets try something. Open up another terminal and use to ping Google again. While you keep that running run netstat one more time.
+Luckily this is less bad than it looks. We got one active internet connection and then a huge number of active sockets. Let's try something. Open up another terminal and use to ping Google again. While you keep that running run netstat one more time.
 
 I use netstat also when I want to discover the application that is using a particular port. In software development 
 this is sometimes necessary when I inadvertently assign the same port number two multiple applications.
@@ -427,6 +438,53 @@ netstat -nlp | grep [PORT_NUMBER]
 Here -nlp that does not mean natural language processing. Instead, the n means list using a numeric value, l means 
 those processes that are listening and p means programs. So list all programs that are listening using a numeric 
 filter which comes after the pipe |.
+
+### NMCLI
+
+Networking on Debian based syhstems such as Ubuntu and Kali is managed by the NetworkManager daemon. With nmcli network setup and configuration becomes relatively painless, and so it is a vital command to learn by heart. Consider all of the times you had or a colleague had a networking issue, now you do not have to reboot the system and hope for the best. 
+
+```
+root@user:/home/user# nmcli
+```
+
+Using the command as is without anyh kind of switch yields a result similar to ifconfig and ip addr show. You get an overview of your networking devices with associated ip addresses but in a format that is little cleaner
+
+```
+root@user:/home/user# nmcli general status
+
+STATE      CONNECTIVITY  WIFI-HW  WIFI     WWAN-HW  WWAN    
+connected  full          missing  enabled  missing  enabled
+``
+
+This shows the state of your networking along with the status of NetworkManager.
+
+```
+root@user:/home/user# nmcli device status
+```
+
+This command displays a list of all network interfaces along with their status (e.g., connected, disconnected).
+
+```
+root@user:/home/user# nmcli device wifi list
+```
+
+List only those Wi-Fi related devices
+
+```
+root@user:/home/user# nmcli device wifi connect <SSID> password <password>
+```
+
+```
+root@user:/home/user# nmcli connection show 
+```
+
+Shows connection of devices. If you add the device name it will only show the details of that particular device.
+
+Finally, the commands most people use for when nothing appears to work.
+
+```
+root@user:/home/user# nmcli networking off/on
+```
 
 ## Hardening
 
