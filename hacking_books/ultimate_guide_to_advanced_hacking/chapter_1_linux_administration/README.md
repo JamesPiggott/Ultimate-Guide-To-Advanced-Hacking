@@ -58,6 +58,13 @@ $ sudo cat /var/log/audit.log
 
 ### Touch
 
+Sometimes it can be useful to create an empty file to organize your work, set correct permissions and such. With touch you can do that. Touch does not know what you intend to do with the file so you can create any name or extension for your file.
+
+```
+$ touch test.txt
+```
+A quick use of ls reveals the file exists. 
+
 ### Nano
 
 Nano is a very basic text editor that comes installed with most versions of Linux just because it is so basic and small. Supplying a Linux Distro without any kind of text editor would be problematic for a number of people if they do not know how to install software packages or make changes to files.
@@ -70,6 +77,54 @@ To open a file using nano just type nano into the Terminal and followed by the f
 
 If the file does not yet exist, nano will create one. In that case Nano opens with an empty file for you to edit. The first thing you need to know is how to close the file after opening. With Ctrl-X you can do that. Note the command means press the Control key (Ctrl) and the x key. That is lower case x despite what the command depicts, so there is no point to use Shift to capitalize the x. 
 Afterwards you are prompted for a confirmation. Just enter y for yes.
+
+Try to use NANO on regular basis, that wy you will get good at it. Below is a cheat sheet of useful commands:
+
+### Navigation
+
+- `Ctrl + A` — Go to the beginning of the line  
+- `Ctrl + E` — Go to the end of the line  
+- `Ctrl + Y` — Move up one page  
+- `Ctrl + V` — Move down one page  
+
+### Copy, Cut & Paste
+
+- `Ctrl + K` — Cut the current line and store it in the buffer  
+- `Ctrl + U` — Paste the content from the buffer  
+- `Alt + 6` — Copy the current line into the buffer (does not remove it)
+
+### Searching Text
+
+- `Ctrl + W` — Start a search. Type your string and press Enter; the cursor will jump to the first match  
+- `Alt + W` — Repeat the last search
+
+### Saving & Exiting
+
+- `Ctrl + O` — Save the file; you'll be prompted to confirm changes  
+- `Ctrl + X` — Exit. If there are unsaved changes, you'll be prompted to save
+
+### Undo & Redo
+
+- `Alt + U` — Undo the last action  
+- `Alt + E` — Redo the last undone action  
+
+### Setting a Mark (Selecting Text)
+
+- Press `Alt + A` to set a mark (start selection)  
+- Move the cursor to extend the selection  
+- Use `Ctrl + K`, `Ctrl + U`, or `Alt + 6` to cut, paste, or copy the selected text
+
+### Miscellaneous
+
+- `Ctrl + C` — Show the current cursor position and total line count  
+- `Ctrl + J` — Justify (reflow) the current paragraph  
+- `Alt + {` or `Alt + }` — Indent or un-indent the current line  
+- `Ctrl + G` — Display the help screen  
+- `Ctrl + L` — Refresh the screen (useful if the display gets corrupted)  
+- `Alt` (by itself) — Switch between multiple open files; the cut buffer is preserved across files  
+- `Alt + 3` — Comment or uncomment the current line  
+- `Ctrl + _` — Go to a specific line number
+
 
 ## User Management
 
