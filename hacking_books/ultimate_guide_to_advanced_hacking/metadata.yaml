@@ -1,0 +1,12 @@
+title: "Ultimate Guide to Hacking"
+author: "Kane"
+date: "March 2025"
+geometry: a4paper
+fontsize: 11pt
+header-includes:
+  - \usepackage{fancyhdr}
+  - \pagestyle{fancy}
+  - \fancyhead[LE,RO]{\nouppercase{\leftmark}}  # Chapter title in header
+  - \fancyfoot[C]{\thepage}  # Page numbers in footer
+number-sections: true
+toc: true  # Enable table of contents per chapter
